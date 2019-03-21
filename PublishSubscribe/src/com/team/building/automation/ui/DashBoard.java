@@ -9,6 +9,7 @@ public class DashBoard implements SensorSubscriber{
 	private Thread mainUIThread;
 	public DashBoard(Sensor sensor) {
 		this.sensor = sensor;
+		this.sensor.subscribeToCOV(this);
 		mainUIThread = new Thread() {
 			@Override
 			public void run() {
